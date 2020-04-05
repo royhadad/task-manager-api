@@ -6,8 +6,12 @@
   "scripts": {
     "start": "node src/index.js",
     "dev": "env-cmd -f ./config/dev.env nodemon src/index.js",
+    "test": "env-cmd -f ./config/test.env jest --watch --runInBand",
     "start-mongo": "/home/roy/mongodb/bin/mongod --dbpath=/home/roy/mongodb-data",
     "kill-process-3000": "sudo kill -9 $(sudo lsof -t -i:3000)"
+  },
+  "jest": {
+    "testEnvironment": "node"
   },
   "keywords": [],
   "author": "",
@@ -25,6 +29,8 @@
   },
   "devDependencies": {
     "env-cmd": "^10.1.0",
-    "nodemon": "^1.18.9"
+    "jest": "^25.2.7",
+    "nodemon": "^1.18.9",
+    "supertest": "^4.0.2"
   }
 }
